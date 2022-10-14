@@ -7,7 +7,7 @@ const PORT = process.env.Port
 const MONGO = process.env.Mongo
 const auth = require("./routes/auth")
 
-
+app.use(express.json())
 app.use("/auth",auth)
 
 
