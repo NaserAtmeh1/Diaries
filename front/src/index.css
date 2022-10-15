@@ -80,6 +80,14 @@
   margin: auto;
 }
 
+.Photo1{
+
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+
 .uploadPic{
   position: absolute;
   left: 54%;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {Link} from "react-router-dom"
 import {DatabaseNetworkPoint} from '@icon-park/react';
+import axios from "axios"
 
 export default function Home() {
 
@@ -21,6 +22,15 @@ const handleChange = (event) => {
 const handleSubmit = (event) => {
   event.preventDefault()
   console.log(user);
+  axios
+  .post("http://localhost:2022/login", {
+    email:user.email,
+    password:user.password,
+  })
+  .then((response) => {
+    setUser(response.data);
+  });
+
 }
 
 
