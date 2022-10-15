@@ -3,6 +3,9 @@ import {Link} from "react-router-dom"
 import {DatabaseNetworkPoint} from '@icon-park/react';
 
 export default function Home() {
+
+
+      
   return (
     <div className='container'>
       <div className='left1'>
@@ -13,7 +16,7 @@ export default function Home() {
           <form className='form1'>
             <input placeholder='Email' className='field' type="email" />
             <input placeholder='Password' className='field' type="password" />
-            <button className='submit'>Login</button>
+            <button className='submit' >Login</button>
             <h3 className='routing'>You don't have an account ? <Link className='rot' to="/register">Register</Link></h3>
           </form>
       </div>

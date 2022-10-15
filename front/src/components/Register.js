@@ -5,6 +5,12 @@ import axios from "axios"
 
 export default function Register() {
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log('button clicked', event.target)
+      }
+
+  
   return (
     <div className='container'>
       <div className='left'>
@@ -21,9 +27,9 @@ export default function Register() {
           <div className='profilePic'>
             <div className='Photo'></div>
             <input className='field2' id='file' type="file" />
-            <label for = "file"  className='uploadPic' >+</label>
+            <label htmlFor = "file"  className='uploadPic' >+</label>
           </div>
-          <button className='submit'>Register</button>
+          <button className='submit' type="submit" onClick={handleSubmit}>Register</button>
           <h3 className='routing'>You already have an account ? <Link className='rot' to="/">Login</Link></h3>
         </form>
       </div>
