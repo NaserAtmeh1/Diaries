@@ -18,7 +18,7 @@ export default function Register() {
        <DatabaseNetworkPoint theme="outline" size="150" fill="#333"/>
         <h1>WonderHit</h1>
        </div>
-          <form className='form'>
+          <form className='form' onSubmit={handleSubmit}>
           <input placeholder='Username' className='field' type="text" />
           <input placeholder='Email' className='field' type="email" />
           <input placeholder='Password' className='field' type="password" />
@@ -29,7 +29,7 @@ export default function Register() {
             <input className='field2' id='file' type="file" />
             <label htmlFor = "file"  className='uploadPic' >+</label>
           </div>
-          <button className='submit' type="submit" onClick={handleSubmit}>Register</button>
+          <button className='submit' type="submit">Register</button>
           <h3 className='routing'>You already have an account ? <Link className='rot' to="/">Login</Link></h3>
         </form>
       </div>
