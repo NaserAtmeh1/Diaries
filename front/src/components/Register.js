@@ -27,7 +27,7 @@ export default function Register() {
 
     const handleFile = (event) => {
         
-        setFile(event.target.files[0])
+        setFile(URL.createObjectURL(event.target.files[0]))
     }
 
 
@@ -52,7 +52,9 @@ export default function Register() {
           <input placeholder='Age' id='age' value={user.age} className='field' type="number" onChange={handleChange} />
           <input placeholder='Gender' id='gender' value={user.gender} className='field' type="text" onChange={handleChange} />
           <div className='profilePic'>
-            <div className='Photo'></div>
+            <div className='Photo'>
+              <img className='Photo' src={file || 'https://rwieruch-public.sfo2.cdn.digitaloceanspaces.com/road-to-redux/2.png'} />
+            </div>
             <input className='field2' id='file' type="file" onChange={handleFile} />
             <label htmlFor = "file"  className='uploadPic' >+</label>
           </div>
