@@ -1,13 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from "react-router-dom"
 import {DatabaseNetworkPoint} from '@icon-park/react';
 import axios from "axios"
 
 export default function Register() {
 
+    const [user, setUser] = useState({
+        username:"",
+        email:"",
+        password:"",
+        age:0,
+        gender:"",
+    })
+    const [file, setFile] = useState(null)
+
+  
+
+
+    const handleChange = (event) => {
+      setUser({
+        ...user,
+        [event.target.id]: event.target.value,
+      });
+    }
+      
+
+    const handleFile = (event) => {
+        
+        setFile(event.target.files[0])
+    }
+
+
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log('button clicked', event.target)
+        console.log(user);
+        console.log(file);
       }
 
   
@@ -19,14 +46,14 @@ export default function Register() {
         <h1>WonderHit</h1>
        </div>
           <form className='form' onSubmit={handleSubmit}>
-          <input placeholder='Username' className='field' type="text" />
-          <input placeholder='Email' className='field' type="email" />
-          <input placeholder='Password' className='field' type="password" />
-          <input placeholder='Age' className='field' name='age' type="number" />
-          <input placeholder='Gender' className='field' name='gender' type="text" />
+          <input placeholder='Username' id='username' value={user.username} className='field' type="text" onChange={handleChange} />
+          <input placeholder='Email' id='email' value={user.email} className='field' type="email" onChange={handleChange} />
+          <input placeholder='Password' id='password' value={user.password} className='field' type="password" onChange={handleChange} />
+          <input placeholder='Age' id='age' value={user.age} className='field' type="number" onChange={handleChange} />
+          <input placeholder='Gender' id='gender' value={user.gender} className='field' type="text" onChange={handleChange} />
           <div className='profilePic'>
             <div className='Photo'></div>
-            <input className='field2' id='file' type="file" />
+            <input className='field2' id='file' type="file" onChange={handleFile} />
             <label htmlFor = "file"  className='uploadPic' >+</label>
           </div>
           <button className='submit' type="submit">Register</button>
