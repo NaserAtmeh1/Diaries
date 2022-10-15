@@ -5,7 +5,7 @@ import {DatabaseNetworkPoint} from '@icon-park/react';
 export default function Home() {
   return (
     <div className='container'>
-      <div className='left'>
+      <div className='left1'>
        <div className='logo'>
        <DatabaseNetworkPoint theme="outline" size="150" fill="#333"/>
         <h1>WonderHit</h1>
