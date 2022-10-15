@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Bungee+Spice&family=Chewy&family=DynaPuff&family=Gabriela&family=Leckerli+One&family=Pacifico&family=Roboto&family=Roboto+Slab&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+
 }
 
 .container {
@@ -19,35 +24,81 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  margin: auto 0;
+  background-color: #F5EEE9;
 }
 
 .logo{
-
+ margin-top: -11vh;
 }
 
 .form{
   width: 80%;
-  border: 1px solid saddlebrown;
   padding: 2vh 2vw;
-  height: 60%;
-
-
+  height: 44%;
+  border-radius: 6px;
 }
 
 .field{
-  width: 60%;
+  width: 80%;
   margin: 2% auto;
-  padding: 1.5% 0;
+  padding: 3% 0;
+  text-align: center;
+  border-radius: 6px;
+  background-color: rgba(159, 245, 234, 0.308);
+  color: black;
+}
+
+.field2{
+  display: none;
 }
 
 .profilePic{
+  margin-top: 1.5vh;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  position: relative;
 
+}
+
+
+.Photo{
+
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 1px solid saddlebrown;
+  margin: auto;
+}
+
+.uploadPic{
+  position: absolute;
+  left: 54%;
+  top: 45%;
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 .submit{
+  margin-top: 1vh;
+  padding: 1vh 2vw;
+  width: 80%;
+ background-color: rgb(53, 240, 36);
+ border-radius: 6px;
+ font-size: 1.3rem;
 
 }
 
-.routing{
+.submit:hover{
+  background-color: rgb(139, 255, 6);
+}
 
+.routing{
+  margin-top: 2vh;
+}
+
+.rot{
+  text-decoration: none;
 }
