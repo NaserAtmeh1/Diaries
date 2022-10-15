@@ -13,7 +13,7 @@ export default function Register() {
         gender:"",
     })
     const [file, setFile] = useState(null)
-
+    const [img,setImg] = useState("")
   
 
 
@@ -25,9 +25,20 @@ export default function Register() {
     }
       
 
+    privewFile = file => {
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onloadend(() => {
+        setImg(reader.result)
+        console.log(img);
+
+      })
+    }
+
     const handleFile = (event) => {
-        
-        setFile(URL.createObjectURL(event.target.files[0]))
+        const pic = event.target.files[0]
+        setFile(pic)
+        privewFile(file)
     }
 
 
@@ -53,9 +64,9 @@ export default function Register() {
           <input placeholder='Gender' id='gender' value={user.gender} className='field' type="text" onChange={handleChange} />
           <div className='profilePic'>
             <div className='Photo'>
-              <img className='Photo' src={file || 'https://rwieruch-public.sfo2.cdn.digitaloceanspaces.com/road-to-redux/2.png'} />
+              <img className='Photo' src={img} />
             </div>
-            <input className='field2' id='file' type="file" onChange={handleFile} />
+            <input className='field2' id='file' type="file" onChange={(e) => handleFile(e)} />
             <label htmlFor = "file"  className='uploadPic' >+</label>
           </div>
           <button className='submit' type="submit">Register</button>

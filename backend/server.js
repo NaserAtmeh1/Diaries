@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express()
 const mongoose = require("mongoose");
+const cors = require("cors")
 const dotenv = require("dotenv")
 dotenv.config()
 const PORT = process.env.Port
@@ -8,6 +9,7 @@ const MONGO = process.env.Mongo
 const auth = require("./routes/auth")
 
 app.use(express.json())
+app.use(cors())
 app.use("/auth",auth)
 
 
