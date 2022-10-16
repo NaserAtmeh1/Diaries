@@ -25,8 +25,14 @@ router.post("/register",async (req,res) => {
 
     //login
     router.post("/login",async (req,res) => {
-        const {email} = req.body;
-    
+        const {email,img} = req.body;
+        cloudinary.v2.uploader.upload(img,
+        { 
+            
+         });
+
+
+
         const allUsers = await User.find();
     
         const specUser = allUsers.find(user => user.email === email)
