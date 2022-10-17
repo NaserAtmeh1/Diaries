@@ -1,35 +1,57 @@
 import React, { useState } from 'react'
-import {Link} from "react-router-dom"
+import {Link,useNavigate} from "react-router-dom"
 import {DatabaseNetworkPoint} from '@icon-park/react';
 import axios from "axios"
 
 export default function Home() {
+  let navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [login, setLogin] = useState(false);
+  const [msg, setMsg] = useState("");
 
-  const [user, setUser] = useState({
-    email:"",
-    password:"",
-})
+
       
-
-
-const handleChange = (event) => {
-  setUser({
-    ...user,
-    [event.target.id]: event.target.value,
-  });
-}
 
 const handleSubmit = (event) => {
   event.preventDefault()
-  console.log(user);
-  axios
-  .post("http://localhost:2022/login", {
-    email:user.email,
-    password:user.password,
+  const configuration = {
+    method: "post",
+    url: "http://localhost:2023/login",
+    data: {
+      email,
+      password
+    },
+  };
+
+  axios(configuration)
+  .then((result) => {
+    if(result.status === 200){
+      setLogin(true)
+    }
+    else{
+      setMsg(result.data.message)
+      alert(msg)
+
+    }
   })
-  .then((response) => {
-    setUser(response.data);
-  });
+  .catch((error) => {
+    // Error
+    if (error.response) {
+        alert(error.response.data.message);
+    } else if (error.request) {
+        console.log("The request was made but no response was received") 
+        console.log(error.request);
+    } else {
+        console.log('Error', error.message);
+    }
+    console.log(error.config);
+});
+
+if(login){
+  navigate("/feed")
+}
+
 
 }
 
@@ -39,17 +61,17 @@ const handleSubmit = (event) => {
     <div className='container'>
       <div className='left1'>
        <div className='logo'>
-       <DatabaseNetworkPoint theme="outline" size="150" fill="#333"/>
+       <DatabaseNetworkPoint theme="outline" size="150" fill="#F5F5F5"/>
         <h1>WonderHit</h1>
        </div>
-          <form className='form1' onSubmit={handleSubmit}>
-          <input placeholder='Email' id='email' value={user.email} className='field' type="email" onChange={handleChange} />
-          <input placeholder='Password' id='password' value={user.password} className='field' type="password" onChange={handleChange} />
+          <form className='form1' onSubmit={(e)=>handleSubmit(e)}>
+          <input placeholder='Email' id='email' value={email} className='field' type="email" onChange={(e) => setEmail(e.target.value)} />
+          <input placeholder='Password' id='password' value={password} className='field' type="password" onChange={(e) => setPassword(e.target.value)} />
             <button className='submit' >Login</button>
-            <h3 className='routing'>You don't have an account ? <Link className='rot' to="/register">Register</Link></h3>
+            <h3 className='routing1'>You don't have an account ? <Link className='rot' to="/register">Register</Link></h3>
           </form>
+         
       </div>
-      <img className='right' src='https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80' />
     </div>
 
     )

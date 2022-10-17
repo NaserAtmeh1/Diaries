@@ -5,6 +5,16 @@ const dotenv = require("dotenv")
 dotenv.config()
 const PORT = process.env.Port
 const MONGO = process.env.Mongo
+
+
+mongoose
+ .connect(MONGO, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+ })
+ .then((db) => console.log("db is connected"))
+ .catch((err) => console.log(err));
+
 const cors = require('cors');
 const corsOptions ={
     origin:'http://localhost:3000', 
@@ -21,18 +31,9 @@ app.use("/",auth)
 
 
 
-mongoose
- .connect(MONGO, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
- })
- .then((db) => console.log("db is connected"))
- .catch((err) => console.log(err));
 
 
- app.get("/",(req,res) => {
-    res.send("<h1>this is our site</h1>")
-})
+
 
 
 app.listen(PORT, () => {

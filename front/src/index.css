@@ -15,7 +15,11 @@
   height: 100vh;
   background-color: #F5EEE9;
   align-items: center;
-
+  background: url("https://i.ibb.co/6bgqgqL/pho.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
 }
 
 .right{
@@ -27,6 +31,8 @@
   flex-direction: column;
   align-items: center;
   height: 80vh;
+  margin-top: 15%;
+
 }
 
 .left1{
@@ -53,7 +59,9 @@
   text-align: center;
   border-radius: 6px;
   background-color: rgba(159, 245, 234, 0.308);
-  color: black;
+  color: white;
+  border: 2px solid #a09e9e
+  ;
 }
 
 .field2{
@@ -87,6 +95,10 @@
   border-radius: 50%;
 }
 
+h1{
+  color: whitesmoke
+
+}
 
 .uploadPic{
   position: absolute;
@@ -99,21 +111,30 @@
 .submit{
   margin-top: 1vh;
   padding: 1vh 2vw;
-  width: 85%;
- background-color: rgb(53, 240, 36);
- border-radius: 6px;
- font-size: 1.3rem;
-
+  width: 38%;
+ background-color: #c9ad78;
+ border-radius: 50px;
+  font-size: 1.3rem;
+ color: black;
 }
 
 .submit:hover{
   background-color: rgb(139, 255, 6);
+  color: black;
 }
 
-.routing{
+
+.routing1{
   margin-top: 2vh;
+  color: rgb(245, 245, 245);
 }
+
 
 .rot{
   text-decoration: none;
+  color: rgb(10, 126, 221);
+}
+
+.rot:hover{
+  color: #e49d1b;
 }
