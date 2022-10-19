@@ -30,7 +30,7 @@ export default function Register() {
         event.preventDefault()
         const configuration = {
           method: "post",
-          url: "http://localhost:2023/register",
+          url: "http://localhost:2024/register",
           data: {
             email : user.email,
             password : user.email,
@@ -64,7 +64,7 @@ export default function Register() {
 });
 
 if(register){
-  navigate("/feed")
+  navigate("/home")
 }
 
 

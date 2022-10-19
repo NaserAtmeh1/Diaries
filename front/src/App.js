@@ -1,16 +1,16 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Feed from './components/Feed';
-import Home from './components/Home';
-import Register from './components/Register';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import Home from './Pages/Home';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="feed" element={<Feed />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>

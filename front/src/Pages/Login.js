@@ -17,7 +17,7 @@ const handleSubmit = (event) => {
   event.preventDefault()
   const configuration = {
     method: "post",
-    url: "http://localhost:2023/login",
+    url: "http://localhost:2024/login",
     data: {
       email,
       password
@@ -49,7 +49,7 @@ const handleSubmit = (event) => {
 });
 
 if(login){
-  navigate("/feed")
+  navigate("/home")
 }
 
 
