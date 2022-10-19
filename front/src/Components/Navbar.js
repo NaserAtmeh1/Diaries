@@ -6,7 +6,7 @@ export default function Navbar() {
     <div className="topbarContainer">
       <div className="topbarLeft">
       <DatabaseNetworkPoint className='iri' theme="outline" size="25" fill="#F5F5F5"/>
-        <span className="logo">WonderHit</span>
+        <span className="logo icooo">WonderHit</span>
       </div>
       <div className="topbarCenter">
         <div className="searchbar">
@@ -19,20 +19,20 @@ export default function Navbar() {
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
-          <span className="topbarLink">Homepage</span>
-          <span className="topbarLink">Timeline</span>
+          <span className="topbarLink icooo">Homepage</span>
+          <span className="topbarLink icooo" >Timeline</span>
         </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">
-            <Person />
+            <Person className='icooo' />
             <span className="topbarIconBadge">1</span>
           </div>
           <div className="topbarIconItem">
-            <Chat />
+            <Chat className='icooo' />
             <span className="topbarIconBadge">2</span>
           </div>
           <div className="topbarIconItem">
-            <Notifications />
+            <Notifications className='icooo' />
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
