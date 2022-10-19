@@ -397,11 +397,10 @@ h1{
 }
 
 .rightbar {
-  flex: 3.5;
+  flex: 0.6;
 }
 
 .rightbarWrapper {
-  padding: 20px 20px 0 0;
 }
 
 .birthdayContainer {
@@ -429,10 +428,9 @@ h1{
 .rightbarTitle{
     margin-bottom: 20px;
     align-self: flex-start;
-    color: #6f2db9;
-    background-color: #b7ecf0;
+    color: #7413e4;
     padding: 1%;
-    border: 1px solid rgb(221, 207, 10);
+    border: 1px solid rgb(247, 240, 154);
     border-radius: 50px;
 }
 
@@ -473,4 +471,204 @@ h1{
 
 .rightbarUsername{
     font-weight: 500;
+}
+
+
+
+.topbarContainer {
+  height: 50px;
+  width: 100vw;
+  background-color: #1877f2;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.topbarLeft {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iri{margin-top: 0.5vh;}
+
+
+.logo {
+  font-size: 24px;
+  margin-left: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.topbarCenter {
+  flex: 5;
+}
+
+.searchbar {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  font-size: 20px !important;
+  margin-left: 10px;
+}
+
+.searchInput {
+  border: none;
+  width: 70%;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.topbarRight {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+.topbarLink {
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.topbarIcons {
+  display: flex;
+}
+
+.topbarIconItem {
+  margin-right: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.topbarIconBadge {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.topbarImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.rightbarTitle{
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.rightbarInfo{
+  margin-bottom: 30px;
+}
+
+.rightbarInfoItem{
+  margin-bottom: 10px;
+}
+
+.rightbarInfoKey{
+  font-weight: 500;
+  margin-right: 15px;
+  color: #555;
+}
+
+.rightbarInfoValue{
+  font-weight: 300;
+}
+
+.rightbarFollowings{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rightbarFollowing{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.rightbarFollowingImg{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.profile{
+    display: flex;
+}
+
+.profileRight{
+    flex: 4;
+}
+
+.profileCover{
+    height: 320px;
+    position: relative;
+}
+
+.profileCoverImg{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+.profileUserImg{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 150px;
+    border: 3px solid white;
+}
+
+.profileInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileInfoName{
+    font-size: 24px;
+}
+
+.profileInfoDesc{
+    font-weight: 300;
+}
+
+.profileRightBottom{
+    display: flex;
 }
