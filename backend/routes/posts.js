@@ -3,6 +3,7 @@ const Post = require("../models/Post");
 const User = require("../models/User");
 
 //create a post
+//
 
 router.post("/", async (req, res) => {
   const newPost = new Post(req.body);
