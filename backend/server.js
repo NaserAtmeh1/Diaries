@@ -26,8 +26,13 @@ app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb',extended: true}));
 
 const auth = require("./routes/auth")
+const userRoute = require("./routes/users");
+const postRoute = require("./routes/posts");
+
 app.use("/",auth)
-  
+app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
+
 
 
 

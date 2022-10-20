@@ -619,13 +619,14 @@ margin-left: 1.5vw;
 .rightbarTitle{
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 3vh;
 }
 
 .rightbarInfo{
   margin-bottom: 30px;
   border: 2px solid #FF004D;
   padding: 1vh 2vw
+  
 }
 
 .rightbarInfoItem{
