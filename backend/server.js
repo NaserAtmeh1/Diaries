@@ -6,11 +6,11 @@ dotenv.config()
 const PORT = process.env.Port
 const MONGO = process.env.Mongo
 
-//
+//fas
 mongoose
  .connect(MONGO, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true
  })
  .then((db) => console.log("db is connected"))
  .catch((err) => console.log(err));
